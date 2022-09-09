@@ -1,0 +1,31 @@
+@import "colors";
+.header {
+  background-color: $black;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.inputContainer {
+  max-width: 300px;
+  width: 100%;
+}
+.label {
+  position: absolute;
+  top: 38px;
+  right: 82px;
+  cursor: text;
+}
+.input {
+  padding: 10px 20px;
+
+  max-width: 700px;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 30px;
+}
+.input:focus + .label,
+.input:valid + .label {
+  top: 30px;
+}
