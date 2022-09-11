@@ -9,14 +9,13 @@ const Header: NextPage = () => {
       <Link href="/">
         <FontAwesomeIcon className="icon" icon={faHome} />
       </Link>
+      <h1>Country with Next js</h1>
       <div className={style.inputContainer}>
-        <label className={style.label} htmlFor="country">
-          Mamlakatni qidiring
-        </label>
         <input
           className={style.input}
           type="search"
           name="country"
+          placeholder="Mamlakatni qidiring"
           autoComplete="off"
           required
         />

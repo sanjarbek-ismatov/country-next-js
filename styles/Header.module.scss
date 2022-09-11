@@ -10,22 +10,15 @@
   max-width: 300px;
   width: 100%;
 }
-.label {
-  position: absolute;
-  top: 38px;
-  right: 82px;
-  cursor: text;
-}
+
 .input {
   padding: 10px 20px;
-
+  outline: none;
   max-width: 700px;
   width: 100%;
   background-color: transparent;
   border: 1px solid $white;
   border-radius: 30px;
-}
-.input:focus + .label,
-.input:valid + .label {
-  top: 30px;
+  color: $white;
+  text-transform: capitalize;
 }
