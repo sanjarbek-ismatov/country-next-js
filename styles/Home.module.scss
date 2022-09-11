@@ -1,6 +1,7 @@
 @import "colors";
 .main {
   background-color: $lightblack;
+  min-height: 100vh;
 }
 .container {
   display: flex;

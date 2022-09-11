@@ -5,6 +5,9 @@
   padding: 30px 50px;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .inputContainer {
   max-width: 300px;

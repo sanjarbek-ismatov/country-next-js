@@ -1,9 +1,10 @@
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "@style/Header.module.scss";
-import type { NextPage } from "next";
+
 import Link from "next/link";
-const Header: NextPage = () => {
+import { HeaderType } from "types/component";
+const Header = ({ onChange, value }: HeaderType) => {
   return (
     <div className={style.header}>
       <Link href="/">
@@ -15,6 +16,8 @@ const Header: NextPage = () => {
           className={style.input}
           type="search"
           name="country"
+          onChange={onChange}
+          value={value}
           placeholder="Mamlakatni qidiring"
           autoComplete="off"
           required
