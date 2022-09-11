@@ -16,7 +16,7 @@ export default Country;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await fetch(
     `https://restcountries.com/v3.1/name/${
-      (params && params.country) || ""
+      params && params.country
     }?fullText=true`
   );
   const country = await res.json();
