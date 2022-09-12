@@ -40,7 +40,7 @@ const Country = (props: { country: country[] }) => {
               </p>
               <p>
                 <span>Google xarita:</span>{" "}
-                <a target="_blank" href={e.maps.googleMaps}>
+                <a target="_blank" rel="noreferrer" href={e.maps.googleMaps}>
                   Bu yerda
                 </a>
               </p>
