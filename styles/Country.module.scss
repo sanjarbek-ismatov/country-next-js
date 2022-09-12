@@ -1,0 +1,21 @@
+@import "colors";
+.countryOne {
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 50px;
+  min-height: 100vh;
+  background-color: $lightblack;
+}
+
+.flag {
+  max-width: 400px;
+  height: auto;
+
+  width: 100%;
+
+  margin: 10px auto;
+  border: none;
+}

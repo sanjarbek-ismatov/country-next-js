@@ -23,3 +23,24 @@
 ::-webkit-scrollbar-thumb {
   background-color: $black;
 }
+.desc {
+  margin: 15px;
+
+  .gerb {
+    img {
+      width: 200px;
+    }
+  }
+  p {
+    font-size: 25px;
+    line-height: 50px;
+    font-family: 100;
+    a {
+      text-decoration: none;
+      color: red;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import style from "@style/Home.module.scss";
 import Header from "components/header";
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { country } from "types/countries";
 const Index = (props: { data: country[] }) => {
@@ -17,24 +18,28 @@ const Index = (props: { data: country[] }) => {
             )
             .map((e, i) => {
               return (
-                <div key={i} className={style.card}>
-                  <Image
-                    className={style.flag}
-                    loader={() => e.flags.png}
-                    width={300}
-                    height={200}
-                    src={e.flags.png}
-                    alt="flag"
-                  />
-                  <h2>{e.name.common}</h2>
-                  <h3 className={style.text}>Hududi: {e.region}</h3>
-                  <h3 className={style.text}>
-                    Aholisi:{" "}
-                    {e.population >= 1000000
-                      ? Math.round(e.population / 1000000) + " million +"
-                      : e.population}
-                  </h3>
-                </div>
+                <Link key={i} href={`/country/${e.name.common.toLowerCase()}`}>
+                  <a className={style.link}>
+                    <div className={style.card}>
+                      <Image
+                        className={style.flag}
+                        loader={() => e.flags.png}
+                        width={300}
+                        height={200}
+                        src={e.flags.png}
+                        alt="flag"
+                      />
+                      <h2>{e.name.common}</h2>
+                      <h3 className={style.text}>Hududi: {e.region}</h3>
+                      <h3 className={style.text}>
+                        Aholisi:{" "}
+                        {e.population >= 1000000
+                          ? Math.round(e.population / 1000000) + " million +"
+                          : e.population}
+                      </h3>
+                    </div>
+                  </a>
+                </Link>
               );
             })}
         </div>
