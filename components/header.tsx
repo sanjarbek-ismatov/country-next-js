@@ -10,7 +10,7 @@ const Header = ({ onChange, value }: HeaderType) => {
       <Link href="/">
         <FontAwesomeIcon className="icon" icon={faHome} />
       </Link>
-      <h1>Country with Next js</h1>
+      <h1 className={style.parag}>Country with Next js</h1>
       <div className={style.inputContainer}>
         <input
           className={style.input}

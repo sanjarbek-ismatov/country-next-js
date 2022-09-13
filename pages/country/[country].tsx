@@ -1,10 +1,12 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import style from "@style/Country.module.scss";
 import React from "react";
 import { Params } from "types/component";
 import { country } from "types/countries";
+import AboutHeader from "components/aboutHeader";
 
+import Image from "next/image";
 const Country = (props: { country: country[] }) => {
   return (
     <div>
@@ -14,7 +16,7 @@ const Country = (props: { country: country[] }) => {
       {props.country.map((e, i) => {
         return (
           <div className={style.countryOne} key={i}>
-            <div>
+            <div className={style.flagDiv}>
               <img
                 className={style.flag}
                 src={e.flags.svg}
@@ -27,7 +29,14 @@ const Country = (props: { country: country[] }) => {
             <div className="desc">
               <div className="gerb">
                 {e.coatOfArms.svg ? (
-                  <img src={e.coatOfArms.svg} />
+                  <Image
+                    loader={() => e.coatOfArms.svg}
+                    placeholder={"blur"}
+                    blurDataURL="https://img.freepik.com/free-vector/white-blurred-background_1034-249.jpg?w=2000"
+                    src={e.coatOfArms.svg}
+                    width={200}
+                    height={200}
+                  />
                 ) : (
                   <p>Gerb mavjud emas!</p>
                 )}
@@ -45,14 +54,37 @@ const Country = (props: { country: country[] }) => {
                 </a>
               </p>
               <p>
+                <span>Boshqa xarita:</span>{" "}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={e.maps.openStreetMaps}
+                >
+                  Bu yerda
+                </a>
+              </p>
+              <p>
                 <span>Rasmiy nomi:</span> {e.name.official}
               </p>
               <p>
-                <span>Hududi:</span>
+                <span>Hududi: </span>
                 {e.region}, {e.subregion}
               </p>
               <p>
                 <span>Aholisi:</span> {e.population} kishi
+              </p>
+              <p>
+                <span>Nomlari: </span> {e.altSpellings.map((e, i) => e + ", ")}
+              </p>
+              <p>
+                <span>Chegaralari: </span>{" "}
+                {(e.borders && e.borders.map((e, i) => <a>{e + ", "}</a>)) || (
+                  <p>Bu davlatda chegaralar nomalum</p>
+                )}
+              </p>
+              <p>
+                <span>Vaqt zonasi: </span>
+                {e.timezones}
               </p>
             </div>
           </div>
@@ -63,7 +95,14 @@ const Country = (props: { country: country[] }) => {
 };
 
 export default Country;
-
+Country.getLayout = (page: NextPage) => {
+  return (
+    <>
+      <AboutHeader />
+      {page}
+    </>
+  );
+};
 export const getServerSideProps: GetServerSideProps<
   { country: country[] },
   Params

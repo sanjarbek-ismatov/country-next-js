@@ -2,7 +2,14 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import Layout from "../components/layout";
 import Head from "next/head";
-function MyApp({ Component, pageProps }: AppProps) {
+import { Page } from "types/component";
+type Props = AppProps & {
+  Component: Page;
+};
+function MyApp({ Component, pageProps }: Props) {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  }
   return (
     <Layout>
       <Head>

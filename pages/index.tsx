@@ -26,6 +26,8 @@ const Index = (props: { data: country[] }) => {
                         loader={() => e.flags.png}
                         width={300}
                         height={200}
+                        placeholder="blur"
+                        blurDataURL="https://cdn.pixabay.com/photo/2015/06/24/02/12/the-blurred-819388_1280.jpg"
                         src={e.flags.png}
                         alt="flag"
                       />

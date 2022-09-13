@@ -4,7 +4,7 @@
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+
   padding-top: 50px;
   min-height: 100vh;
   background-color: $lightblack;
@@ -16,6 +16,6 @@
 
   width: 100%;
 
-  margin: 10px auto;
+  padding: 10px;
   border: none;
 }

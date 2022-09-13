@@ -10,6 +10,9 @@
 .icon {
   color: #dadada;
   width: 35px;
+  font-size: 30px;
+  margin: 10px 15px;
+  cursor: pointer;
 }
 ::placeholder {
   color: $white;
@@ -25,7 +28,7 @@
 }
 .desc {
   margin: 15px;
-
+  max-width: 500px;
   .gerb {
     img {
       width: 200px;
