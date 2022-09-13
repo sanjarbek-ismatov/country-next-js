@@ -78,7 +78,8 @@ const Country = (props: { country: country[] }) => {
               </p>
               <p>
                 <span>Chegaralari: </span>{" "}
-                {(e.borders && e.borders.map((e, i) => <a>{e + ", "}</a>)) || (
+                {(e.borders &&
+                  e.borders.map((e, i) => <a key={i}>{e + ", "}</a>)) || (
                   <p>Bu davlatda chegaralar nomalum</p>
                 )}
               </p>
