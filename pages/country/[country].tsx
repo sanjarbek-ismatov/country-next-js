@@ -12,6 +12,24 @@ const Country = (props: { country: country[] }) => {
     <div>
       <Head>
         <title>{props.country[0].name.official}</title>
+        <meta
+          name="title"
+          content={`Country ${props.country[0].name.official}`}
+        />
+        <meta
+          name="description"
+          content={`${props.country[0].name.common} - country, Next js yordamida tuzilgan Country dasturi`}
+        />
+        <meta
+          name="keywords"
+          content={`country app, uz, Mamlakat, ${props.country[0].name.common}, ${props.country[0].name.official}`}
+        />
+        <meta property="og:title" content="Country Next js" />
+        <meta
+          property="og:description"
+          content={`Country ${props.country[0].name.official}`}
+        />
+        <meta property="og:image" content={props.country[0].flags.png} />
       </Head>
       {props.country.map((e, i) => {
         return (
@@ -85,7 +103,9 @@ const Country = (props: { country: country[] }) => {
               </p>
               <p>
                 <span>Vaqt zonasi: </span>
-                {e.timezones}
+                {e.timezones.map((e, i) => (
+                  <p key={i}>{e}, </p>
+                ))}
               </p>
             </div>
           </div>
