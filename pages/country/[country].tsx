@@ -24,10 +24,13 @@ const Country = (props: { country: country[] }) => {
           name="keywords"
           content={`country app, uz, Mamlakat, ${props.country[0].name.common}, ${props.country[0].name.official}`}
         />
-        <meta property="og:title" content="Country Next js" />
+        <meta
+          property="og:title"
+          content={`${props.country[0].name.official}`}
+        />
         <meta
           property="og:description"
-          content={`Country ${props.country[0].name.official}`}
+          content={`${props.country[0].name.common} haqida Ma'lumotga ega bo'ling`}
         />
         <meta property="og:image" content={props.country[0].flags.png} />
       </Head>
